@@ -53,3 +53,13 @@ const videoSchema = new Schema<IVIDEO>(
 const Video = models?.Video || model("Video",videoSchema);
 
 export default Video;
+//git commit puts the latest commit to the head, and git push updates the online repo with the latest updates made in the local repo.
+//Now since there are multiple edges in nextjs, so the api you make also runs on all of them,
+//so we now also need to check if database is already connected somewhere or not, otherwise the same database will be connected to multiple edges
+//What we really need to check is that if the connection to db already exists or not.(same thing that we did with models)
+//There can be 3 states here:-
+//1.connected.
+//2.Not connected.
+//3.Promise On the Way.
+
+//Firstly, we'll create a types declaration file.
