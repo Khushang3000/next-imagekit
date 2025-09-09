@@ -92,3 +92,30 @@ export async function connectToDB(){
     return cached.connection;
 
 }
+//Now for Authentication, we can use clerk, nextauth, passportjs and many others, for this tutorial we'll use NextAuth
+//and in that too we'll use authentication using email n password.
+//so go to nextauth.js documentation.
+//npm i next-auth
+// To add NextAuth.js to a project create a file called [...nextauth].js in pages/api/auth. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations.
+// Github login:
+// import NextAuth from "next-auth"
+// import GithubProvider from "next-auth/providers/github"
+
+// export const authOptions = {
+//   // Configure one or more authentication providers
+//   providers: [
+//     GithubProvider({
+//       clientId: process.env.GITHUB_ID,
+//       clientSecret: process.env.GITHUB_SECRET,
+//     }),
+//     // ...add more providers here
+//   ],
+// }
+
+// export default NextAuth(authOptions)
+
+// All requests to /api/auth/* (signIn, callback, signOut, etc.) will automatically be handled by NextAuth.js
+//this may act as a middleware too in some cases.
+
+//now go to ts in the nextauth documentation, since we're using typescript, we need to make a declaration file for NextAuth, so that typescript doesn't throw any errors and gives suggestions
+//next-auth.d.ts

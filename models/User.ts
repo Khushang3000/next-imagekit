@@ -43,5 +43,5 @@ const User = models?.User || model("User", userSchema); //if User does exist in 
 //since we already used the generic <IUSER> while creating userSchema so we don't need to use the same generic with the model function
 //but if we didn't use that generic while creating userSchema then typescript wouldn’t know what fields the model has, and you’d lose type safety. In that case, we'd:
 // model<IUSER>("User", userSchema)
-
+export default User;
 //Now similarly we design the Video model.
