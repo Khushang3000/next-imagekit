@@ -6,7 +6,8 @@ import { connectToDB } from "@/utils/db";// for registering the user in the data
 
 //whenever we write backend in nextjs we write it in api folder. the auth folder thingy is specified by the nextauth docs.
 //in nextjs since the path is defined by folder structure like example.com/api/auth/register
-// now POST and GET methods both are in this file, so how do we differentiate? 
+// now POST method is covered in this register route, for the GET method(Login) we'll create another route and use Nextjs there
+//AS NEXTJS HANDLES AUTHENTICATION FOR YOU!!!!!!!!!!!! 
 export async function POST(request: NextRequest) {
     //now we just want email n password of the user to register them.
     //1.Get data from frontend.
@@ -52,5 +53,7 @@ export async function POST(request: NextRequest) {
             {error: "Failed To register User"},
             {status: 400}
         )
+        //step3.2 sending success response done.
+        //now go into utils folder and create auth or authOptions file.
     }
 }
