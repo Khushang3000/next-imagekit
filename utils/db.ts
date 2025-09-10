@@ -3,6 +3,7 @@ import mongoose from "mongoose";//for connection
 //nextjs automatically gives you access to the env variables and you don't need to install additional packages.
 
 const MONGODB_URI = process.env.MONGODB_URI!
+
 // ! just means we're telling typescript that this value is not null or undefined.
 
 if(!MONGODB_URI){

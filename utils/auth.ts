@@ -231,3 +231,20 @@ export const authOptions : NextAuthOptions = {//since we're using ts then why no
     },
     secret: process.env.NEXTAUTH_SECRET
 };
+//Now the next thing that we need to handle is Imagekit with nextjs.So we'll be handling the image upload part of backend now.
+//SO go to Imagekit, on hovering on platform you'll see many things like dam overview and many other useful things like imagekit ai n more.
+//even the video api which you can read about.
+//1. go to Imagekit ai-It does things like resizing, cropping, compressing, watermarking, background removal (AI-based), smart focal cropping, format conversion (e.g. WebP/AVIF).It does things like resizing, cropping, compressing, watermarking, background removal (AI-based), smart focal cropping, format conversion (e.g. WebP/AVIF).
+//you just have to add some things in the url and that's it!!! Hell you could even write prompts in the url to change the image!! 
+//you can learn more about that on their site.
+//2. there's also something called the video api-A Video API allows developers to add short-form and long videos to web apps, offering upload, storage, URL-based video manipulation, encoding, adaptive bitrate streaming, and optimized CDN delivery.
+
+//but it doesn't handle how we should upload videos so we'll first go to the dashboard, then developer options(not the browser ones)
+//we have our public key, private key and imagekit's url end-point.
+//SO go to env
+
+//now go to getstarted on imagekit. on the integration section select nextjs.
+//npm install @imagekit/next
+//now go to upload files- you can read the other sections as well under the docs tho.
+//read upload files docs.
+//now for imagekit, first we gotta authorize the user for file upload. so go to api/imagekit-auth
