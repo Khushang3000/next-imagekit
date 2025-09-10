@@ -91,4 +91,9 @@ export async function POST(request: NextRequest){
             {status: 500}
         )
     }
-}
+}//Now the next thing is Frontend for register login and middleware(can be in backend or frontend) in nextjs.
+//in frontend we write page instead of route, and backend is written in api folder.
+//npx dotenv-types-generator.
+//now, in nextjs if we want hooks(or use classical react) then we gotta use client component, by default everything is server component.
+//everything in the api folder was for backend, rest everything that you create in the app folder is frontend.//for ex: register folder in the app folder.
+//go to page.tsx there.

@@ -137,7 +137,7 @@ export const authOptions : NextAuthOptions = {//since we're using ts then why no
             }
             return session;
         },
-        async signIn({ user, account, profile, email, credentials }) {
+        async signIn({ user, account, profile, email, credentials }) {//THIS IS CALLBACK NOT ACTUAL SIGN-IN FUNCTION.
             //we can also write our custom logic to prevent a certain user from signing in.
             const isAllowedToSignIn = true
             if (isAllowedToSignIn) {
