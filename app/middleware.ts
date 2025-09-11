@@ -63,3 +63,58 @@ export const config = {
     //what this does is ignore all these files above, see we're using "!" above
   ],
 };
+// In Nextjs we can't directly write multiple middlewares for different routes but we have a workaround:-
+// we can fake that by writing our own router inside the middleware.
+
+// import { NextResponse } from "next/server"
+// import type { NextRequest } from "next/server"
+
+// // Custom middleware functions
+// function logger(req: NextRequest) {
+//   console.log("Path:", req.nextUrl.pathname)
+//   return NextResponse.next()
+// }
+
+// function blockAdmin(req: NextRequest) {
+//   return new NextResponse("Admins blocked", { status: 403 })
+// }
+
+// function requireAuth(req: NextRequest) {
+//   const token = req.cookies.get("auth-token")
+//   if (!token) {
+//     return NextResponse.redirect(new URL("/login", req.url))
+//   }
+//   return NextResponse.next()
+// }
+
+// export function middleware(req: NextRequest) {
+//   const path = req.nextUrl.pathname
+
+//   // always run logger
+//   let res = logger(req)
+//   if (res?.status !== 200) return res
+
+//   // 👇 your own matcher logic
+//   if (path.startsWith("/admin")) {
+//     return blockAdmin(req)
+//   }
+
+//   if (path.startsWith("/dashboard")) {
+//     return requireAuth(req)
+//   }
+
+//   // default: allow through
+//   return NextResponse.next()
+// }
+
+// // You can still use global matcher to avoid running
+// // on static files, api routes, etc.
+// export const config = {
+//   matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+// }
+
+
+// NOW THE LAST THING LEFT IS TO USE IMAGEKIT IN FRONTEND! so see imagekit docs->Nextjs->client side code.
+//here basically we can call the API route to retrieve the upload parameters, read more there and see the code.
+//earlier there were providers in v1 of imagekit, previously all components of the page were supposed to know that you're authenticated with imagekit or not.
+//so let's go to the components folder inside app folder. Provider-this is a wrapper that just takes the childeren and renders them.
